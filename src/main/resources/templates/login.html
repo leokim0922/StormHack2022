@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Future Finder | Log In</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <!-- Font Awesome CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <style>
+
+   @import "bourbon";
+
+   body {
+   background: #eee !important;
+   }
+
+   .wrapper {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   }
+
+   .section {
+           padding: 1rem 1.5rem;
+           max-width: 750px;
+           margin: auto;
+   }
+
+   .title {
+           font-weight: 800;
+           font-size: 5rem;
+           font-family: 'Neucha', cursive;
+   }
+
+   .form-signin {
+   max-width: 380px;
+   padding: 15px 35px 45px;
+   margin: 0 auto;
+   background-color: #fff;
+   border: 1px solid rgba(0,0,0,0.1);
+
+   .form-signin-heading,
+   .checkbox {
+   margin-bottom: 30px;
+   }
+
+   .checkbox {
+   font-weight: normal;
+   }
+
+   .subtitle {
+           font-size: 2rem;
+           font-family: 'Amatic SC', cursive;
+   }
+
+       .is-sparta {
+           color: dodgerblue !important;
+   }
+
+       .button.is-sparta {
+           background-color: blue;
+           border-color: transparent;
+           color: #fff !important;
+   }
+
+       .button.is-sparta.is-outlined {
+           background-color: transparent;
+           border-color: blue;
+           color: blue !important;
+   }
+
+   .form-control {
+   position: relative;
+   font-size: 16px;
+   height: auto;
+   padding: 10px;
+   @include box-sizing(border-box);
+
+   &:focus {
+   z-index: 2;
+   }
+   }
+
+   input[type="text"] {
+   margin-bottom: -1px;
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+   }
+
+   input[type="password"] {
+   margin-bottom: 20px;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+   }
+   }
+
+   </style>
+</head>
+<body>
+<section class="hero is-white">
+    <div class="hero-body has-text-centered" style="padding-bottom:1rem;margin:auto;">
+        <h1 class="title is-sparta">Future Finder</h1>
+        <h3 class="subtitle is-sparta">Starts your road here</h3>
+    </div>
+</section>
+<div class="wrapper">
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please login</h2>
+        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>
