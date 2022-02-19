@@ -10,8 +10,8 @@ public class User {
     private String username;
     private String password;
     private MentorScore mentorScore;
-    private ArrayList<Field> interests;
-    private ArrayList<Field> aptitudes;
+    private Field field;
+    private String category;
 
     public User(String firstName, String lastName, String email, String username, String password) {
         this.firstName = firstName;
@@ -20,32 +20,14 @@ public class User {
         this.username = username;
         this.password = password;
         mentorScore = null;
-        interests = new ArrayList<>();
-        aptitudes = new ArrayList<>();
+        category = "";
     }
 
-    // MODIFIES: this
-    // EFFECTS: adds given item to interests list
-    public void addInterests(Field field) {
-        interests.add(field);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: adds given item to aptitudes list.
-    public void addAptitudes(Field field) {
-        aptitudes.add(field);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: remove given item to interests list
-    public boolean removeInterests(Field field) {
-        return interests.remove(field);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: adds given item to aptitudes list.
-    public boolean removeAptitudes(Field field) {
-        return aptitudes.remove(field);
+    //MODIFIES: this
+    //EFFECTS: set the user's field category based on the field question answers
+    public void addField(int s1, int s2, int s3, int s4) {
+        field = new Field(s1, s2, s3, s4);
+        category = field.assignCategory();
     }
 
 
@@ -71,14 +53,6 @@ public class User {
 
     public MentorScore getMentorScore() {
         return mentorScore;
-    }
-
-    public ArrayList<Field> getInterests() {
-        return interests;
-    }
-
-    public ArrayList<Field> getAptitudes() {
-        return aptitudes;
     }
 
 }
