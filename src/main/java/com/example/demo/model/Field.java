@@ -63,6 +63,6 @@ public class Field {
     }
 
     public boolean getIsPractical() {
-        return this.isArts(score3,score4);
+        return this.isPractical(score3,score4);
     }
 }
