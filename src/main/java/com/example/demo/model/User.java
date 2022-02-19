@@ -1,7 +1,5 @@
 package com.example.demo.model;
 
-import java.util.ArrayList;
-
 public class User {
 
     private String firstName;
@@ -27,7 +25,7 @@ public class User {
     //EFFECTS: set the user's field category based on the field question answers
     public void addField(int s1, int s2, int s3, int s4) {
         field = new Field(s1, s2, s3, s4);
-        category = field.assignCategory();
+        category = field.assignCategory(field.getIsArts(), field.getIsPractical());
     }
 
 
