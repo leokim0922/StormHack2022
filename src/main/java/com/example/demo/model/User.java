@@ -1,14 +1,21 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity // tells Hibernate to make a table out of this class.
 public class User {
+
+    @Id
+    @GeneratedValue
 
     private String firstName;
     private String lastName;
     private String email;
     private String username;
     private String password;
-    private MentorScore mentorScore;
-    private Field field;
+    private int mentorScoreId;
     private String category;
 
     public User(String firstName, String lastName, String email, String username, String password) {
@@ -17,15 +24,16 @@ public class User {
         this.email = email;
         this.username = username;
         this.password = password;
-        mentorScore = null;
+        mentorScoreId = 0;
         category = "";
     }
 
     //MODIFIES: this
     //EFFECTS: set the user's field category based on the field question answers
-    public void addField(int s1, int s2, int s3, int s4) {
-        field = new Field(s1, s2, s3, s4);
+    public String addField(int s1, int s2, int s3, int s4) {
+        Field field = new Field(s1, s2, s3, s4);
         category = field.assignCategory(field.getIsArts(), field.getIsPractical());
+        return category;
     }
 
 
@@ -49,8 +57,8 @@ public class User {
         return password;
     }
 
-    public MentorScore getMentorScore() {
-        return mentorScore;
+    public int getMentorScoreId() {
+        return mentorScoreId;
     }
 
 }

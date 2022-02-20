@@ -1,17 +1,22 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.thymeleaf.util.ListUtils.size;
 
-
+@Entity
 public class MentorScore {
     private final double SOCIAL_WEIGH = 0.1;
     private final double CARE_WEIGH = 0.15;
     private final double EXPERIENCE_WEIGH = 0.6;
     private final double VALUE_WEIGH = 0.15;
 
+    @Id
+    @GeneratedValue
     private int id;
     private int social;
     private int careful;
