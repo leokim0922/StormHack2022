@@ -7,16 +7,19 @@ import javax.persistence.Id;
 @Entity // tells Hibernate to make a table out of this class.
 public class User {
 
-    @Id
-    @GeneratedValue
-
     private String firstName;
     private String lastName;
     private String email;
     private String username;
     private String password;
+    @Id
+    @GeneratedValue
     private int mentorScoreId;
     private String category;
+
+    public User() {
+
+    }
 
     public User(String firstName, String lastName, String email, String username, String password) {
         this.firstName = firstName;
@@ -24,8 +27,7 @@ public class User {
         this.email = email;
         this.username = username;
         this.password = password;
-        mentorScoreId = 0;
-        category = "";
+        category = "art";
     }
 
     //MODIFIES: this
