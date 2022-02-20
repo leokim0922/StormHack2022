@@ -270,6 +270,7 @@
 
 
 
+
     </style>
 
 </head>
@@ -305,7 +306,8 @@
                                 <p>Please choose all the fields you have worked in including your current job.</p>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio01" data-item="1" name="radio1" value="Officials and Managers"/>
+                                <input type="checkbox" id="radio01" data-item="1" name="radio1"
+                                       value="Officials and Managers"/>
                                 <label for="radio01"><span></span>
                                     <p>Officials and Managers (ex. officials, executives, department managers, salaried
                                         supervisors, purchasing agents, and buyers)</p></label>
@@ -331,7 +333,8 @@
                                         cashiers/checkers)</p></label>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio05" data-item="1" name="radio1" value="Office and Clerical Workers"/>
+                                <input type="checkbox" id="radio05" data-item="1" name="radio1"
+                                       value="Office and Clerical Workers"/>
                                 <label for="radio05"><span></span>
                                     <p>Office and Clerical Workers (ex. bookkeepers, collectors, messengers and office
                                         helpers, office machine operators)</p></label>
@@ -356,7 +359,8 @@
                                         lifting, digging, mixing, loading and pulling operations)</p></label>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio09" data-item="1" name="radio1" value="Service Workers"/>
+                                <input type="checkbox" id="radio09" data-item="1" name="radio1"
+                                       value="Service Workers"/>
                                 <label for="radio09"><span></span>
                                     <p>Service Workers (attendants, firefighters and fire protection, guards, stewards,
                                         janitors, police officers and detectives, waiters and waitresses, guides)</p>
@@ -436,7 +440,8 @@
                                     you.</p>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio20" data-item="4" name="radio4" value="Setting a difficult goal"/>
+                                <input type="checkbox" id="radio20" data-item="4" name="radio4"
+                                       value="Setting a difficult goal"/>
                                 <label for="radio20"><span></span>
                                     <p>Setting a difficult goal and achieving it</p></label>
                             </div>
@@ -456,32 +461,38 @@
                                     <p>Stability</p></label>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio24" data-item="4" name="radio4" value="Learning and experiencing new stuff"/>
+                                <input type="checkbox" id="radio24" data-item="4" name="radio4"
+                                       value="Learning and experiencing new stuff"/>
                                 <label for="radio24"><span></span>
                                     <p>Learning and experiencing new stuff</p></label>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio25" data-item="4" name="radio4" value="Having enough spare time"/>
+                                <input type="checkbox" id="radio25" data-item="4" name="radio4"
+                                       value="Having enough spare time"/>
                                 <label for="radio25"><span></span>
                                     <p>Having enough spare time</p></label>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio26" data-item="4" name="radio4" value="Being influential"/>
+                                <input type="checkbox" id="radio26" data-item="4" name="radio4"
+                                       value="Being influential"/>
                                 <label for="radio26"><span></span>
                                     <p>Being influential</p></label>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio27" data-item="4" name="radio4" value="Working in self-regulated state"/>
+                                <input type="checkbox" id="radio27" data-item="4" name="radio4"
+                                       value="Working in self-regulated state"/>
                                 <label for="radio27"><span></span>
                                     <p>Working in self-regulated state</p></label>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio28" data-item="4" name="radio4" value="Making a lot of money"/>
+                                <input type="checkbox" id="radio28" data-item="4" name="radio4"
+                                       value="Making a lot of money"/>
                                 <label for="radio28"><span></span>
                                     <p>Making a lot of money</p></label>
                             </div>
                             <div class="mm-survey-item">
-                                <input type="checkbox" id="radio29" data-item="4" name="radio4" value="Getting admiration"/>
+                                <input type="checkbox" id="radio29" data-item="4" name="radio4"
+                                       value="Getting admiration"/>
                                 <label for="radio29"><span></span>
                                     <p>Getting admiration</p></label>
                             </div>
@@ -776,37 +787,6 @@
 
 		});
 
-		jQuery('.mm-survey-results-container .mm-survey-results-list').html('');
-
-		for (i = 1; i <= count; i++) {
-
-			var t = {};
-			var m = {};
-			answer += map[i] + '<br>';
-
-			if( map[i] === ax[i]) {
-				g = map[i];
-				p = 'correct';
-				c = 1;
-			}
-			else {
-				g = map[i];
-				p = 'incorrect';
-				c = 0;
-			}
-
-			jQuery('.mm-survey-results-list').append('<li class="mm-survey-results-item '+p+'"><span class="mm-item-number">'+i+'</span><span class="mm-item-info">'+g+' - '+p+'</span></li>');
-
-			m[i] = c;
-			ttl += m[i];
-
-		}
-
-		var results;
-		results = ( ( ttl / count ) * 100 ).toFixed(0);
-
-		jQuery('.mm-survey-results-score').html( results + '%' );
-
 	}
 
 	function goBack() {
@@ -815,6 +795,7 @@
 			jQuery('.mm-survey-results').slideUp();
 		});
 	}
+
 
 
 </script>
