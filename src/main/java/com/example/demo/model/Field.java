@@ -40,4 +40,29 @@ public class Field {
             return false;
         }
     }
+
+    //GETTERS
+    public int getScore1() {
+        return this.score1;
+    }
+
+    public int getScore2() {
+        return this.score2;
+    }
+
+    public int getScore3() {
+        return this.score3;
+    }
+
+    public int getScore4() {
+        return this.score4;
+    }
+
+    public boolean getIsArts() {
+        return this.isArts(score1,score2);
+    }
+
+    public boolean getIsPractical() {
+        return this.isPractical(score3,score4);
+    }
 }
