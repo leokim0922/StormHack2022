@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 
     <meta charset="UTF-8">
@@ -508,7 +508,9 @@
                         <button disabled="true">Next</button>
                     </div>
                     <div class="mm-finish-btn">
+                        <form method="post" action="main.html" th:object="${MentorRequest}">
                         <button>Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>

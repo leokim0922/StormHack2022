@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Future Finder | Log In</title>
@@ -207,7 +207,9 @@ a{color:inherit;text-decoration:none}
                     <label for="check"><span class="icon"></span> Keep me Signed in</label>
                 </div>
                 <div class="group">
+                    <form method="post" action="main.html" th:object="${loginRequest}">
                     <input type="submit" class="button" value="Sign In">
+                        </form>
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
@@ -232,7 +234,9 @@ a{color:inherit;text-decoration:none}
                     <input id="pass" type="text" class="input">
                 </div>
                 <div class="group">
+                    <form method="post" action="Fieldquestions.html" th:object="${registerRequest}">
                     <input type="submit" class="button" value="Sign Up">
+                    </form>
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
