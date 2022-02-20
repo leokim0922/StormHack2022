@@ -45,6 +45,4 @@ public class Mentorpush extends HttpServlet {
     }
 
 
-
-
 }
