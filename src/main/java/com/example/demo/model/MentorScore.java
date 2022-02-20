@@ -1,28 +1,54 @@
 package com.example.demo.model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.thymeleaf.util.ListUtils.size;
+
 
 public class MentorScore {
     private final double SOCIAL_WEIGH = 0.1;
     private final double CARE_WEIGH = 0.15;
     private final double EXPERIENCE_WEIGH = 0.6;
     private final double VALUE_WEIGH = 0.15;
+
+    private int id;
     private int social;
     private int careful;
-    private List<Boolean> experience;
-    private List<Boolean> careerValue;
+    private boolean experienceManager;
+    private boolean experienceProfessional;
+    private boolean experienceTechnician;
+    private boolean experienceSales;
+    private boolean experienceOffice;
+    private boolean experienceCraft;
+    private boolean experienceOperative;
+    private boolean experienceLabour;
+    private boolean experienceService;
+    private boolean careerAchieve;
+    private boolean careerHelping;
+    private boolean careerAlone;
+    private boolean careerStability;
+    private boolean careerLearning;
+    private boolean careerSpare;
+    private boolean careerInfluential;
+    private boolean careerSelfRegulated;
+    private boolean careerMoney;
+    private boolean careerAdmire;
+
+//    private List<Boolean> experience;
+//    private List<Boolean> careerValue;
 
     public MentorScore() {
-        this.experience = new ArrayList<>();
-        this.careerValue = new ArrayList<>();
+//        this.experience = new ArrayList<>();
+//        this.careerValue = new ArrayList<>();
     }
 
-    private int calculateScore(int social, int careful, List<Boolean> careerValue, List<Boolean>experience) {
+    private int calculateScore(int social, int careful) {
         int matchScore = 0;
+        List<Boolean> experience = makeExperienceList();
+
+        List<Boolean> careerValue = makeCareerValueList();
+
 
         if (java.lang.Math.abs(this.social - social) == 0) {
             matchScore += 100*SOCIAL_WEIGH;
@@ -42,7 +68,7 @@ public class MentorScore {
 
         int careerScore = 0;
         for (int i = 0; i < size(careerValue); i++) {
-            if (this.careerValue.get(i).equals(careerValue.get(i))) {
+            if (careerValue.get(i).equals(careerValue.get(i))) {
                 careerScore += 10;
             }
         }
@@ -50,7 +76,7 @@ public class MentorScore {
 
         int experienceScore = 0;
         for (int i = 0; i < size(experience); i++) {
-            if (this.careerValue.get(i).equals(careerValue.get(i))) {
+            if (careerValue.get(i).equals(careerValue.get(i))) {
                 experienceScore += 33;
             }
         }
@@ -81,88 +107,120 @@ public class MentorScore {
         return careful;
     }
 
-    private void addExperienceManager(boolean manager) {
-        experience.add(manager);
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    private void addExperienceProfessional(boolean professional) {
-        experience.add(professional);
+    private void setExperienceManager(boolean manager) {
+        experienceManager = manager;
     }
 
-    private void addExperienceTechnician(boolean tech) {
-        experience.add(tech);
+    private void setExperienceProfessional(boolean professional) {
+        experienceProfessional = professional;
     }
 
-    private void addExperienceSales(boolean sales) {
-        experience.add(sales);
+    private void setExperienceTechnician(boolean tech) {
+        experienceTechnician = tech;
     }
 
-    private void addExperienceOffice(boolean office) {
-        experience.add(office);
+    private void setExperienceSales(boolean sales) {
+        experienceSales = sales;
     }
 
-    private void addExperienceCraft(boolean craft) {
-        experience.add(craft);
+    private void setExperienceOffice(boolean office) {
+        experienceOffice = office;
     }
 
-    private void addExperienceOperative(boolean operative) {
-        experience.add(operative);
+    private void setExperienceCraft(boolean craft) {
+        experienceCraft = craft;
     }
 
-    private void addExperienceLabour(boolean labour) {
-        experience.add(labour);
+    private void setExperienceOperative(boolean operative) {
+        experienceOperative = operative;
     }
 
-    private void addExperienceService(boolean service) {
-        experience.add(service);
+    private void setExperienceLabour(boolean labour) {
+        experienceLabour = labour;
     }
 
-    private void addCareerAchieve(boolean achieve) {
-        careerValue.add(achieve);
+    private void setExperienceService(boolean service) {
+        experienceService = service;
     }
 
-    private void addCareerHelping(boolean helping) {
-        careerValue.add(helping);
+    private void setCareerAchieve(boolean achieve) {
+        careerAchieve = achieve;
     }
 
-    private void addCareerAlone(boolean alone) {
-        careerValue.add(alone);
+    private void setCareerHelping(boolean helping) {
+        careerHelping = helping;
     }
 
-    private void addCareerStability(boolean stability) {
-        careerValue.add(stability);
+    private void setCareerAlone(boolean alone) {
+        careerAlone = alone;
     }
 
-    private void addCareerLearning(boolean learning) {
-        careerValue.add(learning);
+    private void setCareerStability(boolean stability) {
+        careerStability = stability;
     }
 
-    private void addCareerSpare(boolean spare) {
-        careerValue.add(spare);
+    private void setCareerLearning(boolean learning) {
+        careerLearning = learning;
     }
 
-    private void addCareerInfluential(boolean influence) {
-        careerValue.add(influence);
+    private void setCareerSpare(boolean spare) {
+        careerSpare = spare;
     }
 
-    private void addCareerSelfRegulated(boolean self) {
-        careerValue.add(self);
+    private void setCareerInfluential(boolean influence) {
+        careerInfluential = influence;
     }
 
-    private void addCareerMoney(boolean money) {
-        careerValue.add(money);
+    private void setCareerSelfRegulated(boolean self) {
+        careerSelfRegulated = self;
     }
 
-    private void addCareerAdmire(boolean admire) {
-        careerValue.add(admire);
+    private void setCareerMoney(boolean money) {
+        careerMoney = money;
     }
 
-    public List<Boolean> getCareerValue() {
+    private void setCareerAdmire(boolean admire) {
+        careerAdmire = admire;
+    }
+
+    public List<Boolean> makeCareerValueList() {
+        List<Boolean> careerValue = new ArrayList<>();
+
+        careerValue.add(careerAchieve);
+        careerValue.add(careerHelping);
+        careerValue.add(careerAlone);
+        careerValue.add(careerStability);
+        careerValue.add(careerLearning);
+        careerValue.add(careerSpare);
+        careerValue.add(careerInfluential);
+        careerValue.add(careerSelfRegulated);
+        careerValue.add(careerMoney);
+        careerValue.add(careerAdmire);
         return careerValue;
     }
 
-    public List<Boolean> getExperience() {
+    public List<Boolean> makeExperienceList() {
+        List<Boolean> experience = new ArrayList<>();
+
+        experience.add(experienceManager);
+        experience.add(experienceProfessional);
+        experience.add(experienceTechnician);
+        experience.add(experienceSales);
+        experience.add(experienceOffice);
+        experience.add(experienceCraft);
+        experience.add(experienceOperative);
+        experience.add(experienceLabour);
+        experience.add(experienceService);
+
         return experience;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
 }
